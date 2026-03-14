@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jaewoong Moon, PhD | Translational Scientist</title>
+    <title>Jay Moon, PhD | Translational Scientist</title>
     <meta name="description" content="Portfolio of Jaewoong Moon, PhD - Translational Scientist & Computational Neuroscientist.">
     <style>
         /* Minimalist, typography-driven CSS */
@@ -21,7 +21,7 @@
             color: var(--text-main);
             line-height: 1.6;
             margin: 0;
-            padding: 8vh 5vw;
+            padding: 8vh 5vw 12vh 5vw; /* Added a bit more bottom padding since we removed the footer */
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -31,21 +31,53 @@
             margin: 0 auto;
         }
 
-        header {
-            margin-bottom: 3rem;
+        /* Flexbox container for Profile Sidebar + Bio */
+        .profile-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 2.5rem; 
+            margin-bottom: 4rem;
+        }
+
+        .profile-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem; /* Space between photo and links */
+            flex-shrink: 0;
+            width: 180px; 
+        }
+
+        .profile-img {
+            width: 180px;  
+            height: 355px; 
+            border-radius: 16px; 
+            object-fit: cover;
+            border: 1px solid #eaeaea;
+        }
+
+        .profile-links {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.95rem;
+            justify-content: flex-start;
+        }
+
+        .profile-content {
+            flex: 1;
         }
 
         h1 {
             font-size: 2rem;
             font-weight: 600;
-            margin: 0 0 0.5rem 0;
+            margin: 0 0 0.2rem 0;
             letter-spacing: -0.02em;
+            line-height: 1.1;
         }
 
         .subtitle {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--text-muted);
-            margin: 0;
+            margin: 0 0 1.2rem 0;
         }
 
         section {
@@ -70,7 +102,11 @@
         }
 
         p {
-            margin: 0 0 1.5rem 0;
+            margin: 0 0 1.2rem 0;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
         }
 
         .item {
@@ -96,8 +132,14 @@
             margin: 0;
         }
 
-        ul li {
+        ul.publications-list li {
             margin-bottom: 1.5rem;
+        }
+
+        .scholar-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
         }
 
         .paper-title {
@@ -109,71 +151,211 @@
             color: var(--text-muted);
         }
 
-        footer {
-            margin-top: 5rem;
-            padding-top: 2rem;
-            border-top: 1px solid #eaeaea;
-            font-size: 0.95rem;
+        .award-item {
             display: flex;
-            gap: 1.5rem;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px dashed #f0f0f0;
+            padding-bottom: 0.4rem;
+        }
+
+        .award-item:last-child {
+            border-bottom: none;
+        }
+
+        .award-title {
+            font-weight: 500;
+            padding-right: 1rem;
+        }
+
+        .award-year {
+            color: var(--text-muted);
+            font-variant-numeric: tabular-nums;
+            flex-shrink: 0;
+        }
+
+        /* Responsive adjustment for small screens */
+        @media (max-width: 550px) {
+            .profile-container {
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: center; 
+            }
+            .profile-sidebar {
+                align-items: center;
+            }
+            .profile-links {
+                justify-content: center;
+            }
+            .profile-content {
+                text-align: center; 
+            }
+            #about {
+                text-align: left; 
+            }
+            .award-item {
+                flex-direction: column;
+            }
+            .award-year {
+                font-size: 0.9em;
+                margin-top: 0.2rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Jaewoong Moon, PhD</h1>
-            <p class="subtitle">Translational Scientist & Computational Neuroscientist</p>
+        
+        <header class="profile-container">
+            <div class="profile-sidebar">
+                <img src="img2.jpg" alt="Jay Moon, PhD" class="profile-img" onerror="this.style.display='none'">
+                <div class="profile-links">
+                    <a href="#" id="contact-link" data-user="jaewoong.moon" data-domain="umanitoba.ca">Email</a>
+                    <a href="www.linkedin.com/in/moonneuro" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                <h1>Jay Moon, PhD</h1>
+                <p class="subtitle">Translational Scientist & Computational Neuroscientist</p>
+                <div id="about">
+                    <p>I am a computational neuroscientist bridging the gap between rigorous academic research and real-world clinical deployment. Currently a Postdoctoral Fellow at the University of Manitoba, I focus on instance-level feature discovery and probabilistic modeling to improve personalized neuromonitoring for traumatic brain injury (TBI) in the neurosurgical ICU.</p>
+                    <p>I specialize in translating complex, high-frequency physiologic data into robust, commercially viable neurotechnology that survives real-world deployment.</p>
+                </div>
+            </div>
         </header>
 
         <main>
-            <section id="about">
-                <p>I am a computational neuroscientist bridging the gap between rigorous academic research and real-world clinical deployment. Currently a Postdoctoral Fellow at the University of Manitoba, my work focuses on probabilistic modeling and high-fidelity patient monitoring for traumatic brain injury (TBI) in the neurosurgical ICU.</p>
-                <p>I specialize in translating complex, high-frequency physiologic data into robust, commercially viable neurotechnology that survives real-world deployment.</p>
-            </section>
-
             <section id="work">
                 <h2>Selected Work</h2>
                 
                 <div class="item">
-                    <h3>Clinical Data Science & IP Translation</h3>
-                    <p>Applied the Domain-Agnostic Soft Labeler (DASL) framework to address patient monitoring challenges for TBI, utilizing nonlinear state dynamics to ascertain physiologic significance. I architected standalone software for annotating long-duration physiologic data streams, comprehensively annotating 150 real-world ICU datasets. This established core intellectual property, securing Mitacs Lab-to-Market funding to assess commercial viability.</p>
+                    <h3>Physiologic Modeling & Clinical Data Science</h3>
+                    <p>Applied an instance-driven (i.e., zero-shot) physiologic state quantification framework to address patient monitoring challenges for TBI. Additionally architected standalone software for annotating high-frequency & long-duration physiologic data streams, successfully spearheading a project to annotate 150 real-world ICU datasets. This combination established core intellectual properties, securing entry into Lab-to-Market and corollary Mitacs Business Strategy Internship (BSI) funding to assess commercial viability.</p>
                 </div>
 
                 <div class="item">
-                    <h3>Applied Neurotechnology</h3>
-                    <p>During my PhD at the University of Toronto, I engineered a closed-loop thought-decoding Brain-Computer Interface (BCI) capable of achieving up to 93% accuracy in near real-time by leveraging the passive perception of speech. In industry as a Computational Neuroscientist at NeuroCatch, I enhanced software robustness to real-world data, rescuing algorithmic detection rates to >92% across various clinical conditions.</p>
+                    <h3>Applied Neuro (Brain-Computer Interface & Consumer Neurotech)</h3>
+                    <p>During my PhD at the University of Toronto and Holland Bloorview Kid's Rehabilitation Hospital, I engineered a closed-loop, thought-decoding Brain-Computer Interface (BCI). By leveraging the passive perception of speech, the system achieved up to 93% near real-time accuracy, demonstrating a viable strategy to overcome data quality and quantity bottlenecks in model training.</p>
+                    <p>I subsequently joined NeuroCatch as a Computational Neuroscientist, prototyping data-driven signal processing algorithms that improved real-world software robustness and rescued detection rates to >92% across various clinical conditions.</p>
                 </div>
 
                 <div class="item">
-                    <h3>Scientific Advisory & Strategy</h3>
+                    <h3>Scientific Advisory & Subject Matter Expert</h3>
                     <p>Consulted as a Subject Matter Expert for McKinsey & Co., translating technical constraints of invasive vs. minimally invasive BCI modalities. Conducted technical due diligence for early-stage neurotech ventures, evaluating the technical and commercial viability of proposed consumer applications.</p>
                 </div>
             </section>
 
-            <section id="publications">
-                <h2>Select Publications</h2>
-                <ul>
-                    <li>
-                        <span class="paper-title">Online Ternary Classification of Covert Speech by Leveraging the Passive Perception of Speech.</span><br>
-                        Moon, J., & Chau, T. (2023). <span class="paper-journal">International Journal of Neural Systems</span>.
+            <section id="awards">
+                <h2>Awards & Scholarships</h2>
+                <ul class="awards-list">
+                    <li class="award-item">
+                        <span class="award-title">Lab-to-Market (L2M) Validate Program (Mitacs BSI)</span>
+                        <span class="award-year">2026</span>
                     </li>
+                    <li class="award-item">
+                        <span class="award-title">Venture for Canada Fellowship</span>
+                        <span class="award-year">2025</span>
+                    </li>
+                    <li class="award-item">
+                        <span class="award-title">James F. Crothers Fellowship for Peripheral Nerve Damage</span>
+                        <span class="award-year">2021&ndash;2022</span>
+                    </li>
+                    <li class="award-item">
+                        <span class="award-title">Whipper-Watson Graduate Research Scholarship Award</span>
+                        <span class="award-year">2021&ndash;2022</span>
+                    </li>
+                    <li class="award-item">
+                        <span class="award-title">Toronto Rehabilitation Institute Scholarship</span>
+                        <span class="award-year">2018, 2021</span>
+                    </li>
+                    <li class="award-item">
+                        <span class="award-title">Alexander Himsley Memorial Prize</span>
+                        <span class="award-year">2020</span>
+                    </li>
+                    <li class="award-item">
+                        <span class="award-title">Institute for Technology in Healthcare Thesis Award</span>
+                        <span class="award-year">2020</span>
+                    </li>
+                    <li class="award-item">
+                        <span class="award-title">KITE-Toronto Rehabilitation Research Training Award</span>
+                        <span class="award-year">2019&ndash;2020</span>
+                    </li>
+                    <li class="award-item">
+                        <span class="award-title">Margaret and Howard Gamble Research Grant</span>
+                        <span class="award-year">2018&ndash;2019</span>
+                    </li>
+                    <li class="award-item">
+                        <span class="award-title">Lee Kyung-Suk Scholarship, AKCSE</span>
+                        <span class="award-year">2018</span>
+                    </li>
+                    <li class="award-item">
+                        <span class="award-title">DAAD RISE Research Scholarship, Germany</span>
+                        <span class="award-year">2016</span>
+                    </li>
+                    <li class="award-item">
+                        <span class="award-title">Queen's University Academic Excellence Award</span>
+                        <span class="award-year">2012</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="publications">
+                <h2>Publications</h2>
+                <a href="https://scholar.google.com/citations?user=8314E0QAAAAJ&hl=en&oi=sra" class="scholar-link" target="_blank" rel="noopener noreferrer">Google Scholar &rarr;</a>
+                <ul class="publications-list">
                     <li>
-                        <span class="paper-title">Shared and Task-Specific Phase Coding Characteristics of Gamma- and Theta-Bands in Speech Perception and Covert Speech.</span><br>
-                        Moon, J., & Chau, T. (2023). <span class="paper-journal">Speech Communication</span>.
+                        <span class="paper-title">Intercerebral autoregulation index consistency in the derivation of CPPopt, MAPopt, and BISopt in humans: A scoping review.</span><br>
+                        Hasan, R., Zhang, K., Stein, K. Y., Buchel, A., Bergmann, T., Sainbhi, A. S., Herath, I., Silvaggio, N., Hayat, M., Moon, J., & Zeiler, F. A. (2025). <span class="paper-journal">Physiological Reports</span>, 13(24), e70660.
                     </li>
                     <li>
                         <span class="paper-title">Artifact management methodologies for arterial blood pressure signals: A systematic scoping review of human and animal literature.</span><br>
-                        Bergmann, T., ..., Moon, J., & Zeiler, F. A. (2025). <span class="paper-journal">Physiological Reports</span>.
+                        Bergmann, T., Vakitbilir, N., Nemoga-Stout, X., Sainbhi, A. S., Stein, K. Y., Hasan, R., Hayat, M., Moon, J., & Zeiler, F. A. (2025). <span class="paper-journal">Physiological Reports</span>, 13(19), e70533.
+                    </li>
+                    <li>
+                        <span class="paper-title">Optimal mean arterial pressure and its objective statistical associations with clinical outcomes and multimodal monitoring cerebral physiology: A systematic scoping review.</span><br>
+                        Hasan, R., Buchel, A., Stein, K. Y., Bergmann, T., Sainbhi, A. S., Vakitbilir, N., Herath, I., Silvaggio, N., Hayat, M., Moon, J., & Zeiler, F. A. (2025). <span class="paper-journal">Physiological Reports</span>, 13(18), e70545.
+                    </li>
+                    <li>
+                        <span class="paper-title">Time-Domain Analysis of Low-and High-Frequency Near-Infrared Spectroscopy Sensor Technologies for Characterization of Cerebral Pressure-Flow and Oxygen Delivery Physiology: A Prospective Observational Study.</span><br>
+                        Sainbhi, A. S., Vakitbilir, N., Bergmann, T., Stein, K. Y., Hasan, R., Silvaggio, N., Hayat, M., Moon, J., & Zeiler, F. A. (2025). <span class="paper-journal">Sensors</span>, 25(17), 5391.
+                    </li>
+                    <li>
+                        <span class="paper-title">Time-Series Autoregressive Models for Point and Interval Forecasting of Raw and Derived Commercial Near-Infrared Spectroscopy Measures: An Exploratory Cranial Trauma and Healthy Control Analysis.</span><br>
+                        Sainbhi, A. S., Froese, L., Stein, K. Y., Vakitbilir, N., Hasan, R., Gomez, A., Bergmann, T., Silvaggio, N., Hayat, M., Moon, J., & Zeiler, F. A. (2025). <span class="paper-journal">Bioengineering</span>, 12(7), 682.
+                    </li>
+                    <li>
+                        <span class="paper-title">Relationship between cerebral near-infrared spectroscopy signals and intracranial pressure: a systematic scoping review of the human and animal literature.</span><br>
+                        Silvaggio, N., Stein, K. Y., Sainbhi, A. S., Vakitbilir, N., Bergmann, T., Hasan, R., Hayat, M., Moon, J., Zeiler, F. A. (2025). <span class="paper-journal">Physiological Measurement</span>, 46(12), 125003.
+                    </li>
+                    <li>
+                        <span class="paper-title">Online Ternary Classification of Covert Speech by Leveraging the Passive Perception of Speech.</span><br>
+                        Moon, J., & Chau, T. (2023). <span class="paper-journal">International Journal of Neural Systems</span>, 33(9), 2350048.
+                    </li>
+                    <li>
+                        <span class="paper-title">Shared and Task-Specific Phase Coding Characteristics of Gamma- and Theta-Bands in Speech Perception and Covert Speech.</span><br>
+                        Moon, J., & Chau, T. (2023). <span class="paper-journal">Speech Communication</span>, 147, 63-73.
+                    </li>
+                    <li>
+                        <span class="paper-title">A Comparison and Classification of Oscillatory Characteristics in Speech Perception and Covert Speech.</span><br>
+                        Moon, J., Orlandi, S., & Chau, T. (2022). <span class="paper-journal">Brain Research</span>, 1781, 147778.
+                    </li>
+                    <li>
+                        <span class="paper-title">Neurophysiological Synchrony Between Children with Severe Physical Disabilities and Their Parents During Music Therapy.</span><br>
+                        Samadani, A., Kim, S., Moon, J., Kang, K., & Chau, T. (2021). <span class="paper-journal">Frontiers in Neuroscience</span>, 15, 531915.
+                    </li>
+                    <li>
+                        <span class="paper-title">Revisiting the Application of Feature Selection Methods to Speech Imagery BCI Datasets.</span><br>
+                        Anaraki, J. R., Moon, J., & Chau, T. (2020). <span class="paper-journal">arXiv preprint</span> arXiv:2008.07660.
+                    </li>
+                    <li>
+                        <span class="paper-title">Influence of Bone-Conducted Vibration on Simulator Sickness in Virtual Reality.</span><br>
+                        Weech, S., Moon, J., & Troje, N. F. (2018). <span class="paper-journal">PLoS One</span>, 13(3), e0194137.
                     </li>
                 </ul>
             </section>
         </main>
-
-        <footer>
-            <a href="#" id="contact-link" data-user="jaewoong.moon" data-domain="umanitoba.ca">Email</a>
-            <a href="https://scholar.google.com/citations?user=8314E0QAAAAJ&hl=en&oi=sra" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-        </footer>
 
         <script>
             // Protects email from basic scrapers by constructing the mailto link on click
