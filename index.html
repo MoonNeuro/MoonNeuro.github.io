@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jay Moon, PhD | Translational Scientist</title>
-    <meta name="description" content="Portfolio of Jaewoong Moon, PhD - Translational Scientist & Computational Neuroscientist.">
+    <title>Jay Moon, PhD | Applied Scientist & Computational Neuroscientist</title>
+    <meta name="description" content="Portfolio of Jay Moon, PhD - Applied Scientist & Computational Neuroscientist.">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0GTE22D6LJ"></script>
     <script>
@@ -58,9 +58,10 @@
 
         .profile-img {
             width: 180px;  
-            height: 355px; 
+            height: 230px; 
             border-radius: 16px; 
             object-fit: cover;
+            object-position: top;
             border: 1px solid #eaeaea;
         }
 
@@ -122,6 +123,20 @@
             margin-bottom: 2rem;
         }
 
+        ul.work-list {
+            list-style-type: disc;
+            padding-left: 1.2rem;
+            margin-top: 0.6rem;
+        }
+
+        ul.work-list li {
+            margin-bottom: 0.6rem;
+        }
+
+        ul.work-list li:last-child {
+            margin-bottom: 0;
+        }
+
         a {
             color: var(--link-color);
             text-decoration: underline;
@@ -144,6 +159,12 @@
             font-weight: 500;
             display: inline-block;
             text-wrap: pretty; 
+        }
+        .pub-category {
+            margin-top: 2.2rem;
+        }
+        .pub-category:first-of-type {
+            margin-top: 0;
         }
         .pub-category h3 {
             font-style: italic;
@@ -237,10 +258,10 @@
 
             <div class="profile-content">
                 <h1>Jay Moon, PhD</h1>
-                <p class="subtitle">Translational Scientist & Computational Neuroscientist</p>
+                <p class="subtitle">Applied Scientist & Computational Neuroscientist</p>
                 <div id="about">
-                    <p>I am a computational neuroscientist bridging the gap between rigorous academic research and real-world clinical deployment. Currently a Postdoctoral Fellow at the University of Manitoba, I focus on instance-level feature discovery and probabilistic modeling to improve personalized neuromonitoring for traumatic brain injury (TBI) in the neurosurgical ICU.</p>
-                    <p>I specialize in turning messy real-world physiologic data into practical digital health (neurotech) applications.</p>
+                    <p>I am an applied scientist focused on taking time-series, signal-processing, and anomaly detection models from mathematical formulation into deployed software. I specialize in probabilistic modeling and building reliable ML pipelines for noisy, high-frequency sensor data.</p>
+                    <p>Currently a Postdoctoral Fellow at the University of Manitoba, I architect ingestion pipelines and zero-shot feature discovery models for 100Hz continuous neuromonitoring in the ICU. Across my work, from closed-loop BCI prototypes to FDA/Health Canada-approved medical software, I focus on turning shifting real-world signals into objective, production-ready tools.</p>
                 </div>
             </div>
         </header>
@@ -250,78 +271,49 @@
                 <h2>Selected Work</h2>
                 
                 <div class="item">
-                    <h3>Physiologic Modeling & Clinical Data Science</h3>
-                    <p>Applied an instance-driven (i.e., zero-shot) physiologic state quantification framework to address patient monitoring challenges for TBI. Additionally architected standalone software for annotating high-frequency & long-duration physiologic data streams, successfully spearheading a project to annotate 150 real-world ICU datasets. This combination established core intellectual properties, securing entry into Lab-to-Market and corollary Mitacs Business Strategy Internship (BSI) funding to assess commercial viability.</p>
+                    <h3>Time-Series Modeling & Zero-Shot Anomaly Detection</h3>
+                    <ul class="work-list">
+                        <li>Standardized ingestion and quality-control pipelines for high-frequency (100Hz), multi-channel physiological signals across 158 PHIA-compliant neurosurgical ICU datasets.</li>
+                        <li>Architected SPARC (CIPO Software Copyright #: 1248739), a standalone visualization and taxonomic artifact-annotation platform validated with Medtronic's Patient Monitoring R&amp;D division.</li>
+                        <li>Formulated and validated DASL (Provisional Patent 64/158,894), a statistically generative, zero-shot anomaly detection framework leveraging nonlinear state dynamics to isolate unlabeled failure modes and latent clinical events across shifting reference frames.</li>
+                        <li>Awarded Mitacs Lab-to-Market funding to lead technical validation across 36 clinical and industry stakeholders, generating 13 pilot and collaboration requests.</li>
+                    </ul>
                 </div>
 
                 <div class="item">
-                    <h3>Applied Neuro (Brain-Computer Interface & Consumer Neurotech)</h3>
-                    <p>During my PhD at the University of Toronto and Holland Bloorview Kid's Rehabilitation Hospital, I engineered a closed-loop, thought-decoding Brain-Computer Interface (BCI). By leveraging the passive perception of speech, the system achieved up to 93% near real-time accuracy, demonstrating a viable strategy to overcome data quality and quantity bottlenecks in model training.</p>
-                    <p>I subsequently joined NeuroCatch as a Computational Neuroscientist, prototyping data-driven signal processing algorithms that improved real-world software robustness and rescued detection rates to >92% across various clinical conditions.</p>
+                    <h3>Production Neurotech & Real-Time Closed-Loop Systems</h3>
+                    <ul class="work-list">
+                        <li>At NeuroCatch, authored and deployed data-driven signal-processing and ML algorithms into an FDA/Health Canada-approved EEG Software as a Medical Device (SaMD), raising real-world detection accuracy above 92%.</li>
+                        <li>Codified expert clinical criteria (P300, N100, N400 event-related potentials) into an objective system of equations to serve as a reproducible evaluation pipeline, and partnered with engineering to audit drift and failure modes under regulated standards.</li>
+                        <li>Previously, during my PhD at the University of Toronto and Holland Bloorview Kids Rehabilitation Hospital, engineered an end-to-end, closed-loop EEG brain-computer interface (BCI) prototype. Using a passive speech-perception training paradigm to overcome labeled-data scarcity, the system achieved up to 93% online classification accuracy under strict real-time inference constraints.</li>
+                    </ul>
                 </div>
 
                 <div class="item">
-                    <h3>Scientific Advisory & Subject Matter Expert</h3>
-                    <p>Consulted as a Subject Matter Expert for McKinsey & Co., translating technical constraints of invasive vs. minimally invasive BCI modalities. Conducted technical due diligence for early-stage neurotech ventures, evaluating the technical and commercial viability of proposed consumer applications.</p>
+                    <h3>Scientific Advisory & Technical Due Diligence</h3>
+                    <ul class="work-list">
+                        <li>Advised management consulting and product teams (McKinsey &amp; Co., De:Mind, Card79) as a Subject Matter Expert on sensor hardware constraints, signal reliability, and real-world feasibility across invasive and non-invasive neurotechnology systems.</li>
+                    </ul>
                 </div>
             </section>
 
-            <section id="awards">
-                <h2>Awards & Scholarships</h2>
-                <ul class="awards-list">
-                    <li class="award-item">
-                        <span class="award-title">Lab-to-Market (L2M) Validate Program (Mitacs BSI)</span>
-                        <span class="award-year">2026</span>
-                    </li>
-                    <li class="award-item">
-                        <span class="award-title">Venture for Canada Fellowship</span>
-                        <span class="award-year">2025</span>
-                    </li>
-                    <li class="award-item">
-                        <span class="award-title">James F. Crothers Fellowship for Peripheral Nerve Damage</span>
-                        <span class="award-year">2021&ndash;2022</span>
-                    </li>
-                    <li class="award-item">
-                        <span class="award-title">Whipper-Watson Graduate Research Scholarship Award</span>
-                        <span class="award-year">2021&ndash;2022</span>
-                    </li>
-                    <li class="award-item">
-                        <span class="award-title">Toronto Rehabilitation Institute Scholarship</span>
-                        <span class="award-year">2018, 2021</span>
-                    </li>
-                    <li class="award-item">
-                        <span class="award-title">Alexander Himsley Memorial Prize</span>
-                        <span class="award-year">2020</span>
-                    </li>
-                    <li class="award-item">
-                        <span class="award-title">Institute for Technology in Healthcare Thesis Award</span>
-                        <span class="award-year">2020</span>
-                    </li>
-                    <li class="award-item">
-                        <span class="award-title">KITE-Toronto Rehabilitation Research Training Award</span>
-                        <span class="award-year">2019&ndash;2020</span>
-                    </li>
-                    <li class="award-item">
-                        <span class="award-title">Margaret and Howard Gamble Research Grant</span>
-                        <span class="award-year">2018&ndash;2019</span>
-                    </li>
-                    <li class="award-item">
-                        <span class="award-title">Lee Kyung-Suk Scholarship, AKCSE</span>
-                        <span class="award-year">2018</span>
-                    </li>
-                    <li class="award-item">
-                        <span class="award-title">DAAD RISE Research Scholarship, Germany</span>
-                        <span class="award-year">2016</span>
-                    </li>
-                    <li class="award-item">
-                        <span class="award-title">Queen's University Academic Excellence Award</span>
-                        <span class="award-year">2012</span>
-                    </li>
-                </ul>
-            </section>
             <section id="publications">
                 <h2>Selected Works</h2>
                 <a href="https://scholar.google.ca/citations?hl=en&user=83l4E0QAAAAJ&view_op=list_works&authuser=1&sortby=pubdate" class="scholar-link" target="_blank" rel="noopener noreferrer">Google Scholar &rarr;</a>
+
+                <div class="pub-category">
+                    <h3>Patents & Intellectual Property</h3>
+                    <ul class="publications-list">
+                        <li>
+                            <span class="paper-title">Probabilistic Signal Anomaly Detector (DASL Framework) & Spatiotemporally Agnostic Research Canvas (SPARC).</span><br>
+                            <strong>Moon, J.</strong> (2026). <span class="paper-journal">US Provisional Patent Application No. 64/158,894</span> (Disclosed to University of Manitoba Technology Transfer Office).
+                        </li>
+                        <li>
+                            <span class="paper-title">Spatiotemporally Agnostic Research Canvas (SPARC) Standalone Software.</span><br>
+                            <strong>Moon, J.</strong> (2026). <span class="paper-journal">Canadian Intellectual Property Office (CIPO) Software Copyright Registration No. 1248739</span>.
+                        </li>
+                    </ul>
+                </div>
 
                 <div class="pub-category">
                     <h3>Selected Journal Articles</h3>
@@ -390,12 +382,38 @@
                             <a href="https://doi.org/10.2139/ssrn.6627305" target="_blank" rel="noopener noreferrer" class="paper-title">Device-Agnostic Camera-Based System for Real-Time Extraction of ICU Bedside Device Data.</a><br>
                             Hayat, M., Roca, V., Movshovich, M., Herath, I., Hasan, R., Sainbhi, A. S., Stein, K., Vakitbilir, N., Silvaggio, N., Bergmann, T., <strong>Moon, J.</strong>, Froese, L., & Zeiler, F. (2026). <span class="paper-journal">SSRN Preprint</span>.
                         </li>
-                        <!-- <li>
-                            <a href="https://doi.org/10.48550/arXiv.2008.07660" target="_blank" rel="noopener noreferrer" class="paper-title">Revisiting the Application of Feature Selection Methods to Speech Imagery BCI Datasets.</a><br>
-                            Anaraki, J. R., <strong>Moon, J.</strong>, & Chau, T. (2020). <span class="paper-journal">arXiv Preprint</span>.
-                        </li> -->
                     </ul>
                 </div>
+            </section>
+
+            <section id="awards">
+                <h2>Selected Awards & Fellowships</h2>
+                <ul class="awards-list">
+                    <li class="award-item">
+                        <span class="award-title">Lab-to-Market (L2M) Validate Program (Mitacs Business Strategic Internship)</span>
+                        <span class="award-year">2026</span>
+                    </li>
+                    <li class="award-item">
+                        <span class="award-title">James F. Crothers Fellowship for Peripheral Nerve Damage</span>
+                        <span class="award-year">2021&ndash;2022</span>
+                    </li>
+                    <li class="award-item">
+                        <span class="award-title">Whipper-Watson Graduate Research Scholarship Award</span>
+                        <span class="award-year">2021&ndash;2022</span>
+                    </li>
+                    <li class="award-item">
+                        <span class="award-title">Toronto Rehabilitation Institute Scholarship</span>
+                        <span class="award-year">2018&ndash;2022</span>
+                    </li>
+                    <li class="award-item">
+                        <span class="award-title">Institute for Technology in Healthcare Thesis Award</span>
+                        <span class="award-year">2020</span>
+                    </li>
+                    <li class="award-item">
+                        <span class="award-title">Margaret & Howard Gamble Grant - Cerebral Palsy</span>
+                        <span class="award-year">2020</span>
+                    </li>
+                </ul>
             </section>
         
         </main>
